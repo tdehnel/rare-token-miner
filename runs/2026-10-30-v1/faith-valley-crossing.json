@@ -1,0 +1,22 @@
+{
+  "id": "faith-valley-crossing",
+  "strong_form": "For an agent at a local optimum, any move to a higher peak must cross a region of lower payoff, and no information available beforehand can justify making the crossing; so rational, evidence-based decision procedures will never leave local optima, and leaving takes a non-rational commitment ('faith').",
+  "weak_form": "Leaving a local optimum often needs commitment beyond what current evidence fully warrants, and some optimism or underestimated difficulty can help, as in Hirschman's Hiding Hand.",
+  "kind": "heuristic",
+  "refuted_if": "Showing that decision procedures with exploration that is justified from available information (value-of-information calculations, UCB/optimism-in-the-face-of-uncertainty, simulated annealing schedules, neutral-network drift) reliably escape local optima with provable guarantees.",
+  "synonyms": ["leap of faith", "exploration-exploitation tradeoff", "fitness valley crossing", "shifting balance theory", "Hiding Hand principle", "optimism in the face of uncertainty"],
+  "prior_art": [
+    {"citation": "Hiding hand principle (Hirschman 1967): underestimating difficulty lets projects begin", "url": "https://en.wikipedia.org/wiki/Hiding_hand_principle", "relation": "anticipates"},
+    {"citation": "Flyvbjerg & Sunstein, The Principle of the Malevolent Hiding Hand", "url": "https://arxiv.org/pdf/1509.01526", "relation": "refutes"},
+    {"citation": "Stochastic Bandits: Optimism in the Face of Uncertainty (UCB regret bounds)", "url": "https://zahidul-hasan.github.io/bandits-optimism", "relation": "refutes"},
+    {"citation": "Simulated annealing as principled acceptance of worse moves (gradient-free-optimizers docs)", "url": "https://gradient-free-optimizers.readthedocs.io/en/stable/user_guide/optimizers/local/simulated_annealing.html", "relation": "refutes"},
+    {"citation": "van Nimwegen & Crutchfield, neutral evolution crosses entropy barriers faster than fitness barriers", "url": "https://arxiv.org/pdf/adap-org/9907002v1", "relation": "refutes"},
+    {"citation": "Genetic draft and valley crossing (bioRxiv)", "url": "https://www.biorxiv.org/content/10.1101/383737.full.pdf", "relation": "anticipates"}
+  ],
+  "strongest_criticism": "Decision theory and bandit/optimization theory show that exploration can be justified from available information: the expected value of information and optimistic confidence bounds rationally license moves that lower short-term payoff, with provable regret guarantees. Evolution also crosses valleys blindly, through drift and neutral networks, with no faith involved. What remains true is the weaker point that a specific crossing can't be guaranteed to pay off, which is ordinary decision-making under uncertainty, not a limit of rationality.",
+  "verdict": "refuted-strong-form",
+  "novelty": 1,
+  "content": 2,
+  "survival": 1,
+  "confidence": 0.7
+}

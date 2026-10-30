@@ -1,0 +1,21 @@
+{
+  "id": "truffle-hound",
+  "strong_form": "Among people facing a compelled public affirmation (loyalty oath, mandatory diversity statement, pledge), those who refuse are significantly more likely than compliers to be producing important original work in fields unrelated to the affirmation's subject, so refusal works as a detectable signal of high-value independent thinkers.",
+  "weak_form": "Compelled affirmations filter out some independent-minded people, and institutions that use them may lose dissenters, some of whom do valuable work.",
+  "kind": "claim",
+  "refuted_if": "A study comparing refusers and compliers (e.g., 1950 UC loyalty-oath non-signers, Haidt-type resignations, diversity-statement objectors) finds no difference in later research impact, or finds refusers are mainly motivated by religion or politics with no link to productivity.",
+  "synonyms": ["preference falsification (Kuran)", "loyalty oath as filter", "costly signal of nonconformity", "heretic-as-innovator"],
+  "prior_art": [
+    {"citation": "Timur Kuran, Private Truths, Public Lies (econlib discussion)", "url": "https://www.econlib.org/archives/2010/04/preference_fals.html", "relation": "anticipates"},
+    {"citation": "NAS, 'The New Loyalty Oaths'", "url": "https://www.nas.org/blogs/article/the-new-loyalty-oaths", "relation": "supports"},
+    {"citation": "Reason, Mandated diversity statement drives Jonathan Haidt to quit academic society (2022)", "url": "https://reason.com/2022/09/30/mandated-diversity-statement-drives-jonathan-haidt-to-quit-academic-society", "relation": "supports"},
+    {"citation": "Comparing demographics of signatories to public letters on diversity in the mathematical sciences (arXiv 1912.13334)", "url": "https://arxiv.org/pdf/1912.13334", "relation": "refutes"},
+    {"citation": "West Virginia State Board of Education v. Barnette (1943)", "url": "https://www.law.cornell.edu/supremecourt/text/319/624", "relation": "refutes"}
+  ],
+  "strongest_criticism": "Refusers are selected on many traits besides research brilliance: religious conviction (the Barnette Jehovah's Witnesses), political opposition, or the tenure and security to afford refusal. The arXiv signatory study found objectors were mostly tenured senior men at elite universities, which points to a status confound rather than a hidden-genius signal. No study links refusal to unrelated research output, and the 'most likely' wording rests on an anecdote. As an incentive argument, that compelled affirmations deter independent-minded people, the claim is plausible, but the strong predictive form is untested.",
+  "verdict": "untested",
+  "novelty": 2,
+  "content": 2,
+  "survival": 1,
+  "confidence": 0.6
+}

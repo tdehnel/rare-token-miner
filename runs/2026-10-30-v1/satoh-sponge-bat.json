@@ -1,0 +1,21 @@
+{
+  "id": "satoh-sponge-bat",
+  "strong_form": "Hiroji Satoh, a little-known player, won the 1952 World Table Tennis Championships men's singles (Bombay) mainly because of a novel sponge-covered racket whose near-silent contact and unusual spin disrupted opponents' timing, more than because of superior skill.",
+  "weak_form": "An equipment innovation (sponge) contributed decisively to an upset world title and then changed the sport.",
+  "kind": "anecdote",
+  "refuted_if": "Contemporary records showing Satoh used a conventional pimpled-rubber or hard bat in 1952, or match reports showing his win was attributed to established skill and the racket was not a significant factor.",
+  "synonyms": ["sponge revolution in table tennis", "equipment-driven upset", "hardbat-to-sponge transition"],
+  "prior_art": [
+    {"citation": "Hiroji Satoh, Wikipedia", "url": "https://en.wikipedia.org/wiki/Hiroji_Satoh", "relation": "supports"},
+    {"citation": "TTNZ archives 1952 chronicle (sponge believed effective mainly because it produced no sound)", "url": "https://ttnzarchives.org.nz/chronicle/1952.htm", "relation": "supports"},
+    {"citation": "The New Republic, 'The Beautiful Game'", "url": "https://newrepublic.com/article/64946/the-beautiful-game", "relation": "supports"},
+    {"citation": "Paddle Palace blog, Rufford Harrison and Judy Hoarfrost (earlier sponge users; opponents baffled)", "url": "https://blog.paddlepalace.com/?p=50", "relation": "anticipates"},
+    {"citation": "All About Table Tennis, Hardbat Table Tennis", "url": "https://www.allabouttabletennis.com/hardbat-table-tennis.html", "relation": "supports"}
+  ],
+  "strongest_criticism": "The facts mostly hold: Satoh won the 1952 Bombay singles with a sponge racket, and at the time people credited part of its effect to its silence. But the 'sandpaper bat' detail in the quote is not supported by what I found. Sponge was not his idea alone (Fritsch, and Rapp a decade earlier), and he dropped back quickly once opponents adjusted, so the win shows a short-lived surprise edge rather than 'one idea beats skill'. He was also a world-class player, so as a general lesson this is a single anecdote.",
+  "verdict": "survives-qualified",
+  "novelty": 2,
+  "content": 1,
+  "survival": 2,
+  "confidence": 0.65
+}

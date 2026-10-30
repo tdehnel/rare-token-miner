@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Critic verdict",
+  "type": "object",
+  "required": ["id", "strong_form", "kind", "refuted_if", "synonyms", "prior_art", "strongest_criticism", "verdict", "novelty", "content", "survival", "confidence"],
+  "properties": {
+    "id": { "type": "string" },
+    "strong_form": { "type": "string", "description": "Strongest testable version of the claim; the version judged." },
+    "weak_form": { "type": ["string", "null"], "description": "A weaker version worth noting, if any." },
+    "kind": { "enum": ["claim", "problem", "heuristic", "label", "anecdote"] },
+    "refuted_if": { "type": ["string", "null"], "description": "Concrete observation that would refute the strong form; null if none can be named." },
+    "synonyms": { "type": "array", "items": { "type": "string" } },
+    "prior_art": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["citation", "url", "relation"],
+        "properties": {
+          "citation": { "type": "string" },
+          "url": { "type": "string" },
+          "relation": { "enum": ["anticipates", "refutes", "supports"] }
+        }
+      }
+    },
+    "strongest_criticism": { "type": "string" },
+    "verdict": { "enum": ["survives", "survives-qualified", "contested", "untested", "refuted", "refuted-strong-form", "unfalsifiable-as-stated", "reframed"] },
+    "novelty": { "type": "integer", "minimum": 0, "maximum": 3 },
+    "content": { "type": "integer", "minimum": 0, "maximum": 3 },
+    "survival": { "type": "integer", "minimum": 0, "maximum": 3 },
+    "confidence": { "type": "number", "minimum": 0, "maximum": 1 }
+  }
+}

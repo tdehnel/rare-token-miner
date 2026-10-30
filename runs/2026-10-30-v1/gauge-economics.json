@@ -1,0 +1,22 @@
+{
+  "id": "gauge-economics",
+  "strong_form": "When preferences change over time, comparing cost of living between two dates is path dependent; the right formalism is a connection on a fibre bundle over the space of prices/preferences, whose curvature measures the path dependence, and this framework gives a cost-of-living index that existing economic index-number theory (Divisia, chained, superlative indices) does not already supply.",
+  "weak_form": "Path dependence in Divisia/chained price indices is mathematically a holonomy/integrability phenomenon, so the language of connections and curvature describes it exactly.",
+  "kind": "claim",
+  "refuted_if": "Showing that the gauge-theoretic index reduces to an existing index (e.g. a Divisia index under a chosen notion of 'constant') with no new empirical or computational content, or that its central results are tautologies or false.",
+  "synonyms": ["Economics as gauge theory", "geometric economics", "Divisia index path dependence", "integrability condition for price indices", "gauge theory of arbitrage (Ilinski)"],
+  "prior_art": [
+    {"citation": "Malaney & Weinstein, Dartmouth colloquium abstract: recasting CPI/index number problem in connection theory on fiber bundles", "url": "https://math.dartmouth.edu/%7Ecolloq/f97/weinstein.html", "relation": "anticipates"},
+    {"citation": "Nguyen (2021), A Response to Economics as Gauge Theory, arXiv:2112.03460: mathematically sound but obscures simple concepts; Corollary 1 tautological, Conjecture 1 likely false", "url": "https://arxiv.org/abs/2112.03460v1", "relation": "refutes"},
+    {"citation": "Ilinski (1997), Physics of Finance: arbitrage as curvature of a connection, money-unit rescaling as gauge symmetry", "url": "https://arxiv.org/abs/hep-th/9710148", "relation": "anticipates"},
+    {"citation": "Gauge Invariance, Geometry and Arbitrage (arXiv:0908.3043): discusses Malaney-Weinstein, path dependence parametrized by curvature", "url": "https://arxiv.org/pdf/0908.3043", "relation": "supports"},
+    {"citation": "Divisia price and quantity indices: 80 years after (Balk 2005): Divisia line-integral path dependence; path-independent only with unit income elasticities", "url": "https://econpapers.repec.org/RePEc:bla:stanee:v:59:y:2005:i:2:p:119-158", "relation": "anticipates"},
+    {"citation": "How do you measure the price level? (Information Equilibrium blog): the choice of 'constant' makes indices equivalent to a Divisia index", "url": "https://infoeqm.substack.com/p/how-do-you-measure-price-level", "relation": "refutes"}
+  ],
+  "strongest_criticism": "Path dependence of Divisia indices and its integrability (curvature-like) conditions were known in index-number theory long before; the gauge formulation reportedly reduces to a Divisia index once a notion of parallel transport is chosen, so the choice that solves the problem is an economic assumption, not a mathematical result. The only detailed outside review found the framework correct but adding little, with a key result tautological. 'Solved' overstates it; 'redescribed' fits better.",
+  "verdict": "refuted-strong-form",
+  "novelty": 2,
+  "content": 2,
+  "survival": 1,
+  "confidence": 0.65
+}

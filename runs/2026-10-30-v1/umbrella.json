@@ -1,0 +1,23 @@
+{
+  "id": "umbrella",
+  "strong_form": "The standard rib-and-canopy umbrella performs worst in the conditions it is meant for (wind-driven rain: it inverts, breaks and leaves the user wet) and causes real eye and face injuries. A simple mechanical redesign exists that fixes both problems without large costs in price, weight or packability.",
+  "weak_form": "Conventional umbrellas fail in wind and pose some eye-injury risk, and better designs are possible.",
+  "kind": "problem",
+  "refuted_if": "Either (a) wind failure and eye injury are negligible in practice, or (b) existing redesigns (asymmetric aerodynamic Senz, vented double canopies, flexible ribs, blunt tips) fix them yet stay niche for reasons that show the fix is not simple, such as cost, weight, poor sideways-rain coverage or still inverting.",
+  "synonyms": ["storm umbrella", "windproof umbrella", "aerodynamic asymmetric umbrella", "inverted/reverse umbrella"],
+  "prior_art": [
+    {"citation": "Senz stormproof umbrella (TechCrunch)", "url": "https://techcrunch.com/?p=4066", "relation": "anticipates"},
+    {"citation": "Yanko Design, SENZ Umbrella can resist strong winds", "url": "https://www.yankodesign.com/2022/03/28/senz-umbrella-can-resist-strong-winds-and-keep-you-dry-from-the-rain/amp/", "relation": "anticipates"},
+    {"citation": "V&A, New acquisition: storm umbrella", "url": "https://www.vam.ac.uk/blog/textiles-and-fashion/new-acquisition-storm-umbrella", "relation": "anticipates"},
+    {"citation": "UKHillwalking forum, Senz umbrellas (user reports inversion)", "url": "https://www.ukhillwalking.com/forums/off_belay/senz_umbrellas-777755", "relation": "refutes"},
+    {"citation": "Noda et al., Perforating eyelid injury from umbrella tip, J Med Case Reports 2010", "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2822793/", "relation": "supports"},
+    {"citation": "Tokitsu et al., Skullbase-penetrating injuries caused by umbrella tips (1990)", "url": "https://pubmed.ncbi.nlm.nih.gov/2186293/", "relation": "supports"},
+    {"citation": "AIOS 2024, Ocular trauma by an umbrella in a child", "url": "https://2024.proceedings.aios.org/fp1784/", "relation": "supports"}
+  ],
+  "strongest_criticism": "The wind problem is well known, and redesigns such as Senz (designed from 2005, in the V&A collection), vented canopies and inverted umbrellas already exist and have commercial competitors. So it is not a neglected problem. These products remain niche, are heavier and pricier, and users still report inversions, which suggests the trade-offs are not simple. Umbrella eye injuries are documented only in case reports, with no incidence data showing a significant burden. 'Some simple design should exist' is a hunch rather than a testable mechanism.",
+  "verdict": "survives-qualified",
+  "novelty": 0,
+  "content": 1,
+  "survival": 2,
+  "confidence": 0.65
+}

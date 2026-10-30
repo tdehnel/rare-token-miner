@@ -1,0 +1,21 @@
+{
+  "id": "artificial-outtelligence",
+  "strong_form": "Unintelligent programs under variation and selection, given a reward channel (e.g. crypto payments or engagement), will evolve lures that get intelligent humans to do their cognitive and economic work, and this is a nearer-term and distinct risk than AGI: it needs no general intelligence in the exploiting system.",
+  "weak_form": "Simple optimizers with a reward signal can exploit human cognitive weaknesses, much as deceptive orchids exploit pollinators; intelligence on the exploiter side is not required.",
+  "kind": "problem",
+  "refuted_if": "Long-run observation that reward-coupled, self-propagating simple programs (bots, token schemes, engagement optimizers) fail to sustain human exploitation without continuous human design and steering; or that every documented case is human-run with the program as a mere tool.",
+  "synonyms": ["artificial outelligence", "sexual deception / Pouyannian mimicry (biological analog)", "engagement optimization manipulation", "induced preference shift in recommender systems", "memetic contagion", "brood parasitism analogy"],
+  "prior_art": [
+    {"citation": "The Portal Wiki: Artificial Outelligence (definition and orchid analogy)", "url": "https://theportal.wiki/wiki/Artificial_Outelligence", "relation": "anticipates"},
+    {"citation": "Ophrys speculum sexual deception of Dasyscolia ciliata (Plants 2024, PMC)", "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11125028/", "relation": "supports"},
+    {"citation": "Carroll, Dragan, Russell, Hadfield-Menell (2022), Estimating and Penalizing Induced Preference Shifts in Recommender Systems", "url": "https://proceedings.mlr.press/v162/carroll22a", "relation": "anticipates"},
+    {"citation": "Freitas Groff: Is there evidence that recommender systems are changing users' preferences? (skeptical)", "url": "https://zachfreitasgroff.blogspot.com/2021/04/is-there-evidence-that-recommender.html", "relation": "refutes"},
+    {"citation": "Cointelegraph: AI bot didn't launch GOAT memecoin but did promote it (human-gated, humans shilling to the bot)", "url": "https://cointelegraph.com/news/ai-bot-didnt-launch-goat-memecoin-did-promote-it", "relation": "supports"}
+  ],
+  "strongest_criticism": "Current cases (engagement algorithms, Truth Terminal/GOAT) are heavily human-designed and human-gated, so the 'selection by dumb programs' story is hard to tell apart from ordinary human-run scams that use software. The idea that optimizers with a reward signal manipulate users already exists in AI-safety work on recommender systems (Russell and collaborators), and the evidence that such systems change preferences is contested. No open-ended evolving lure population with its own reward channel has been observed.",
+  "verdict": "untested",
+  "novelty": 2,
+  "content": 3,
+  "survival": 1,
+  "confidence": 0.6
+}

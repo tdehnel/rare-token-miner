@@ -24,6 +24,9 @@ Following Popper and Deutsch, "true" means unrefuted and hard to vary, and "know
 
 - `data/weinstein-2018.json`: 25 candidates from a 2018 thread on Eric Weinstein's ideas, each hand-labeled with claim, refutation condition, synonyms, prior art, and scores.
 - `score.js`: ranks a dataset. Run `node score.js [file]`.
+- `critic/prompt.md`, `critic/schema.json`: the critic agent's instructions and output format.
+- `compare.js`: compares a critic run with the hand labels. Run `node compare.js runs/<dir>`.
+- `runs/2026-10-30-v1/`: first blind critic run, one JSON file per claim, plus `REPORT.md`.
 
 ## Pilot 1: Weinstein thread
 

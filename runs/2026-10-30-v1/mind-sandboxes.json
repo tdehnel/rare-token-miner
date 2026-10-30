@@ -1,0 +1,21 @@
+{
+  "id": "mind-sandboxes",
+  "strong_form": "People who can simulate an opposing view well enough to argue from inside it (e.g., pass an Ideological Turing Test) understand that view better and argue against it more effectively than people who only know their own side, as measured by persuasion or debate outcomes.",
+  "weak_form": "Knowing an opponent's position in its strongest form is necessary to judge between positions (Mill).",
+  "kind": "heuristic",
+  "refuted_if": "Controlled studies show that ITT-passing or perspective-taking ability does not predict better accuracy about, or success against, opposing positions, or that simulation mainly produces caricatures that adherents reject.",
+  "synonyms": ["Ideological Turing Test", "steelmanning", "perspective-taking", "Mill's 'he who knows only his own side'", "principle of charity"],
+  "prior_art": [
+    {"citation": "J.S. Mill, On Liberty ch. 2 (1859): 'He who knows only his own side of the case knows little of that'", "url": "https://wist.info/mill-john-stuart/2820/", "relation": "anticipates"},
+    {"citation": "Bryan Caplan, The Ideological Turing Test, EconLog (2011)", "url": "https://www.econlib.org/?p=15090", "relation": "anticipates"},
+    {"citation": "LessWrong wiki, Ideological Turing Tests", "url": "https://www.lesswrong.com/w/ideological-turing-tests", "relation": "anticipates"},
+    {"citation": "Bensinger et al., 'On the Contrary, Steelmanning Is Normal; ITT-Passing Is Niche'", "url": "https://www.greaterwrong.com/posts/jo5Fhkb7escrYE9cC/on-the-contrary-steelmanning-is-normal-itt-passing-is-niche", "relation": "refutes"},
+    {"citation": "Tom Stafford, The Ideological Turing Test", "url": "https://tomstafford.substack.com/p/the-ideological-turing-test", "relation": "supports"}
+  ],
+  "strongest_criticism": "This is Mill's argument restated as Caplan's ITT and as rationalist steelmanning, so it is well known. Critics argue that ITT-passing is a niche skill: you can understand a view's strongest arguments without mimicking its adherents, and mimicry can reward rhetorical style over substance. The claim that emulation helps you 'beat' a view has little direct empirical testing.",
+  "verdict": "survives-qualified",
+  "novelty": 1,
+  "content": 2,
+  "survival": 2,
+  "confidence": 0.7
+}

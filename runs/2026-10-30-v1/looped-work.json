@@ -1,0 +1,18 @@
+{
+  "id": "looped-work",
+  "strong_form": "Formal education mainly trains students for repeatable, rule-following ('looped') expert tasks, so the occupations it prepares for are disproportionately exposed to automation by software, more than the jobs of people with less schooling.",
+  "weak_form": "Much of what credentialed experts are trained to do is routine cognitive work that software can absorb.",
+  "kind": "claim",
+  "refuted_if": "Evidence that automation exposure falls with education, or that educated workers' task content is mostly non-routine and complemented rather than replaced by software.",
+  "synonyms": ["routine-biased technological change", "task-based approach (ALM)", "automation exposure of white-collar work", "Moravec's paradox (related)"],
+  "prior_art": [
+    {"citation": "Autor, Levy & Murnane (2003), The Skill Content of Recent Technological Change, QJE: computers substitute for routine tasks and complement non-routine cognitive tasks, raising demand for college labor", "url": "https://econpapers.repec.org/RePEc:oup:qjecon:v:118:y:2003:i:4:p:1279-1333", "relation": "refutes"},
+    {"citation": "Eloundou et al. (2023), GPTs are GPTs: higher-wage and higher-education occupations more exposed to LLMs", "url": "https://arxiv.org/abs/2303.10130", "relation": "supports"}
+  ],
+  "strongest_criticism": "For the computer era, the best evidence (Autor-Levy-Murnane) says the opposite: software replaced routine middle-skill tasks and complemented the non-routine cognitive work educated workers do, which raised the demand for college labor. Only with LLMs does exposure rise with education (Eloundou et al.), and exposure is not displacement. So the claim is at best an era-specific forecast, and its premise that education trains for looped work is asserted, not measured.",
+  "verdict": "contested",
+  "novelty": 1,
+  "content": 2,
+  "survival": 1,
+  "confidence": 0.6
+}

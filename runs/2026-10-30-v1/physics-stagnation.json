@@ -1,0 +1,21 @@
+{
+  "id": "physics-stagnation",
+  "strong_form": "No theoretical proposal for new fundamental particle-physics content (a new field, symmetry, or mechanism beyond what was in place by roughly the mid-1980s) has since been confirmed by experiment; the Standard Model confirmations of the last ~40 years (W/Z, top quark, Higgs, tau neutrino) all test predictions made earlier.",
+  "weak_form": "Since the 1970s-80s, beyond-Standard-Model theory (GUTs, supersymmetry, technicolor, extra dimensions, etc.) has produced many predictions and no confirmations.",
+  "kind": "claim",
+  "refuted_if": "A theory-originated prediction of a new fundamental ingredient, first proposed after ~1985, that experiment then confirmed (e.g., a discovered superpartner, observed proton decay, or a new boson predicted after 1985).",
+  "synonyms": ["crisis in the foundations of physics", "stagnation in fundamental physics", "the trouble with physics", "'Not Even Wrong' critique", "stagnant Lakatosian research programme"],
+  "prior_art": [
+    {"citation": "Stagnant Lakatosian Research Programmes, arXiv:2404.18307", "url": "https://arxiv.org/pdf/2404.18307", "relation": "anticipates"},
+    {"citation": "Hossenfelder, 'The present phase of stagnation in the foundations of physics is not normal', Nautilus", "url": "https://nautil.us/the-present-phase-of-stagnation-in-the-foundations-of-physics-is-not-normal-237258", "relation": "anticipates"},
+    {"citation": "NBC News, 'Why some scientists say physics has gone off the rails' (Turok quote)", "url": "https://www.nbcnews.com/mach/science/why-some-scientists-say-physics-has-gone-rails-ncna879346", "relation": "supports"},
+    {"citation": "IAI TV, 'Why the foundations of physics have not progressed for 40 years'", "url": "https://iai.tv/articles/why-physics-has-made-no-progress-in-50-years-auid-1292", "relation": "anticipates"},
+    {"citation": "Scientific American blog, 'Which Should Come First in Physics: Theory or Experiment?'", "url": "https://www.scientificamerican.com/blog/observations/which-should-come-first-in-physics-theory-or-experiment-glad-you-asked", "relation": "supports"}
+  ],
+  "strongest_criticism": "How the claim reads depends on what counts as an 'improvement': the 2012 Higgs discovery and the 1995 top quark were theory-driven predictions that nature validated within the window, even though the theory itself is older. Neutrino mass is a real change to the minimal Standard Model, though experiment drove it. Theorists made real advances in calculation (precision QCD, lattice, amplitudes) that experiment confirms, so 'no theory advance' holds only for new fundamental content. On that reading the claim is well supported, but it is a widely aired critique (Smolin, Woit, Hossenfelder, Turok), not a rare insight.",
+  "verdict": "survives-qualified",
+  "novelty": 1,
+  "content": 2,
+  "survival": 2,
+  "confidence": 0.7
+}

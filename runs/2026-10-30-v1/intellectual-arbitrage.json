@@ -1,0 +1,22 @@
+{
+  "id": "intellectual-arbitrage",
+  "strong_form": "Fields where (a) experts face incentives that penalize stating certain hypotheses, and (b) research effort has converged on a single dominant hypothesis, hold more neglected, correct ideas per unit of effort than other fields. Looking for these two signs therefore predicts where outsiders will make breakthroughs at above-base rates.",
+  "weak_form": "Incentives and groupthink can make a field's consensus fragile, so it is worth asking what insiders cannot afford to say.",
+  "kind": "heuristic",
+  "refuted_if": "Retrospective analysis shows that fields with incentive-protected monocultures produced no more later-vindicated outsider ideas than diverse fields, or that most 'can't-afford-to-say' contrarian bets in such fields failed.",
+  "synonyms": ["Upton Sinclair's salary principle", "Thiel's contrarian question / secrets", "groupthink", "paradigm lock-in (Kuhn)", "preference falsification", "too big to fail hypothesis"],
+  "prior_art": [
+    {"citation": "Quote Investigator, 'It Is Difficult to Get a Man to Understand Something When His Salary Depends Upon His Not Understanding It' (Sinclair, 1935)", "url": "https://quoteinvestigator.com/2017/11/30/salary/", "relation": "anticipates"},
+    {"citation": "Farnam Street, Peter Thiel's contrarian interview question (Zero to One)", "url": "https://fs.blog/2015/11/the-single-best-interview-question-you-can-ask/", "relation": "anticipates"},
+    {"citation": "Scientific American, Alzheimer's, Inc.: When a Hypothesis Becomes Too Big to Fail", "url": "https://www.scientificamerican.com/article/alzheimers-inc-when-a-hypothesis-becomes-too-big-to-fail", "relation": "supports"},
+    {"citation": "STAT, amyloid hypothesis and Alzheimer's research (2025)", "url": "https://www.statnews.com/2025/02/11/amyloid-hypothesis-alzheimers-research-lecanemab-aduhelm/", "relation": "supports"},
+    {"citation": "Herrup, How Not to Study a Disease (review, J Alzheimer's Dis)", "url": "https://content.iospress.com/articles/journal-of-alzheimers-disease/jad220035", "relation": "supports"},
+    {"citation": "Kuran, preference falsification (econlib)", "url": "https://www.econlib.org/archives/2010/04/preference_fals.html", "relation": "anticipates"}
+  ],
+  "strongest_criticism": "This combines Upton Sinclair's salary principle with Thiel's 'secrets' question and Kuhnian paradigm lock-in, all widely known. Survivorship bias drives the evidence. Amyloid-style monocultures look like monocultures only in hindsight, while many fields converge because the dominant view is right, and contrarian bets against them fail quietly. Even the amyloid case is disputed (funding limits vs gatekeeping; partial vindication by lecanemab). No base-rate study shows the heuristic beats random search.",
+  "verdict": "survives-qualified",
+  "novelty": 1,
+  "content": 3,
+  "survival": 2,
+  "confidence": 0.6
+}

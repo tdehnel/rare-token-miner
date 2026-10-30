@@ -1,0 +1,20 @@
+{
+  "id": "even-temperament",
+  "strong_form": "12 divisions of the octave are favored because log2(3) ≈ 19/12 (2^(19/12) ≈ 2.9966, about 2 cents from 3), equivalently 2^(7/12) ≈ 3/2; 7/12 is a continued-fraction convergent of log2(3/2), so 12 is the smallest equal division that gives a near-pure fifth with a manageable number of notes.",
+  "weak_form": "The arithmetic coincidence 2^19 ≈ 3^12 (Pythagorean comma ≈ 23.5 cents) is what lets 12-tone equal temperament close the circle of fifths with tiny error.",
+  "kind": "claim",
+  "refuted_if": "2^(19/12) differing materially from 3 (it does not: 2.99661), or showing that 12-TET's adoption and success are better explained by something unrelated to fifth approximation (e.g., if smaller/other divisions approximated fifths equally well and were rejected for reasons of fifths).",
+  "synonyms": ["Pythagorean comma", "circle of fifths closure", "continued-fraction convergents of log2(3/2)", "3^12 ≈ 2^19"],
+  "prior_art": [
+    {"citation": "Harmony and Duality: An introduction to Music Theory, arXiv:2309.10719", "url": "https://arxiv.org/pdf/2309.10719", "relation": "anticipates"},
+    {"citation": "Why the Kirnberger Kernel Is So Small, arXiv:0907.5249 (12-note scale as coincidence of 3 ≈ 2^(19/12))", "url": "https://arxiv.org/pdf/0907.5249", "relation": "anticipates"},
+    {"citation": "NRICH, Equal Temperament", "url": "https://nrich.maths.org/5501", "relation": "supports"},
+    {"citation": "ET Approximations of Just Intervals", "url": "https://letheward.codeberg.page/blog/content/music/equal_temp_approx/en.html", "relation": "supports"}
+  ],
+  "strongest_criticism": "The arithmetic is exact and well known, but 'works because' is only half the story. 12-TET also depends on 2^(4/12) roughly approximating 5/4 (the major third, about 14 cents sharp), which matters for triadic harmony, and on a historical path running through meantone and well temperaments to keyboard practicality. The fact is standard textbook material in tuning theory, stated in many explainers.",
+  "verdict": "survives-qualified",
+  "novelty": 1,
+  "content": 2,
+  "survival": 3,
+  "confidence": 0.85
+}

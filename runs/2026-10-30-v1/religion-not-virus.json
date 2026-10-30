@@ -1,0 +1,21 @@
+{
+  "id": "religion-not-virus",
+  "strong_form": "Because religious practice costs its holders so much (time, resources, reproduction, risk), selection would have removed it unless it raised the fitness of the people or lineages that carry it; so religion is adaptive, and memetic 'mind-virus' or byproduct accounts, in which religion spreads at its hosts' expense, are wrong.",
+  "weak_form": "Religion's high and persistent cost is evidence (not proof) that it has had adaptive functions, such as cooperation and commitment signaling, for the groups that held it.",
+  "kind": "claim",
+  "refuted_if": "Finding costly cultural traits that persist and spread while lowering host fitness (e.g. via nonparental or prestige-biased transmission), or showing that religious commitment does not predict fitness or group success where it is costly.",
+  "synonyms": ["adaptationist account of religion", "costly signaling theory of religion", "social solidarity theory", "metaphorical truth", "cultural group selection"],
+  "prior_art": [
+    {"citation": "Sosis & Alcorta: religious rituals as costly signals promoting intra-group cooperation", "url": "https://public.websites.umich.edu/~satran/Ford%2006/Wk%205-2%20Religion%20A-General%20Sosis%20&%20Alcorta.pdf", "relation": "anticipates"},
+    {"citation": "Henrich (2009), The evolution of costly displays, cooperation and religion", "url": "https://www2.psych.ubc.ca/~henrich/pdfs/evolution of costly displays _henrich 2009.pdf", "relation": "supports"},
+    {"citation": "Evolutionary psychology of religion (adaptationist vs byproduct debate)", "url": "https://wikipedia.com/wiki/Evolutionary_psychology_of_religion", "relation": "anticipates"},
+    {"citation": "Richerson & Boyd via review: maladaptive cultural variants persist because adaptive information is costly; demographic transition as maladaptive", "url": "https://www.overcomingbias.com/p/hail-richerson-and-boyd", "relation": "refutes"},
+    {"citation": "Big Think: Bret Weinstein, how evolution explains religion", "url": "https://bigthink.com/thinking/bret-weinstein-how-evolution-explains-religion", "relation": "anticipates"}
+  ],
+  "strongest_criticism": "Cost does not rule out parasitism; it is exactly what a parasite imposes. Cultural evolution theory (Boyd and Richerson) shows how costly, fitness-reducing variants can spread through nonparental and prestige-biased transmission, so 'too expensive to be a virus' is a non sequitur. Adaptive and memetic accounts are also not exclusive: religion may be adaptive in some forms and settings and parasitic in others, and empirical support for costly-signaling models is only partial.",
+  "verdict": "refuted-strong-form",
+  "novelty": 1,
+  "content": 2,
+  "survival": 1,
+  "confidence": 0.7
+}

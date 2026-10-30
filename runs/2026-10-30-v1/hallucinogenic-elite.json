@@ -1,0 +1,23 @@
+{
+  "id": "hallucinogenic-elite",
+  "strong_form": "Psychedelic use (for creativity or therapy) is substantially more common among top scientists, inventors, and billionaires than in the general population, and is widely known privately within those circles but under-acknowledged publicly.",
+  "weak_form": "Some notable scientists, inventors and tech leaders have credited psychedelics with creative breakthroughs.",
+  "kind": "claim",
+  "refuted_if": "A representative, anonymous survey of elite scientists, inventors and billionaires finds lifetime or current psychedelic-use rates no higher than in demographically matched controls.",
+  "synonyms": ["Silicon Valley microdosing", "psychedelic-assisted problem solving", "Steve Jobs/Kary Mullis LSD anecdotes", "IFAS Menlo Park creativity studies"],
+  "prior_art": [
+    {"citation": "The Hallucinogenic Elite (Tim Ferriss Show transcript), Medium", "url": "https://medium.com/@arikr/the-hallucinogenic-elite-9d5f1eafd076", "relation": "anticipates"},
+    {"citation": "Newsweek, LSD creativity Silicon Valley (prevalence near impossible to estimate)", "url": "https://www.newsweek.com/lsd-creativity-silicon-valley-brain-activity-557055", "relation": "refutes"},
+    {"citation": "Shortform, Silicon Valley psychedelics", "url": "https://www.shortform.com/blog/silicon-valley-psychedelics/", "relation": "supports"},
+    {"citation": "Slashdot / 1843 Magazine, Silicon Valley avant-garde turned to LSD", "url": "https://tech.slashdot.org/story/17/09/11/1711251/silicon-valley-avant-garde-have-turned-to-lsd-in-a-bid-to-increase-their-productivity", "relation": "supports"},
+    {"citation": "Britannica, Kary Mullis (credited LSD with opening his mind to PCR)", "url": "https://www.britannica.com/biography/Kary-Mullis", "relation": "supports"},
+    {"citation": "IFLScience, LSD, DNA, PCR: the strange origins (Mullis 'functionally sober' at the moment of insight)", "url": "https://iflscience.com/lsd-dna-pcr-the-strange-origins-of-a-biology-revolution-63126", "relation": "refutes"},
+    {"citation": "Lucid News, psychedelics as catalysts for creativity (MINDS survey of innovators in progress)", "url": "https://www.lucid.news/beyond-fda-approval-psychedelics-as-catalysts-for-creativity-and-innovation/", "relation": "supports"}
+  ],
+  "strongest_criticism": "The evidence is anecdotes and journalism: famous self-reports (Jobs, Mullis), executive coaches, and Silicon Valley trend pieces. These are subject to survivorship and selection bias, and I found no prevalence data comparing elites with controls. Even the headline case is muddied, since Mullis said he was sober when he had the PCR idea, and the creativity benefit itself has no solid causal evidence. Because 'many' and 'open secret' are vague, the claim can absorb almost any data unless it is pinned to a base-rate comparison.",
+  "verdict": "untested",
+  "novelty": 1,
+  "content": 1,
+  "survival": 1,
+  "confidence": 0.7
+}

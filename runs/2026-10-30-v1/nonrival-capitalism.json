@@ -1,0 +1,22 @@
+{
+  "id": "nonrival-capitalism",
+  "strong_form": "As a growing share of economic value comes from nonrival, cheaply copyable goods (software, media, designs, models), the welfare theorems' assumptions (rivalry, excludability, price ~ marginal cost) fail for the main sectors rather than for exceptions, so competitive market prices systematically diverge from social value and market failure becomes the typical case for leading-edge production.",
+  "weak_form": "Information goods are nonrival and drive price toward zero marginal cost, so markets underprovide or misprice them; this matters more as their economic share grows.",
+  "kind": "claim",
+  "refuted_if": "Information-goods sectors show prices and output close to social optimum through excludability mechanisms (IP, DRM, subscriptions, versioning, bundling, platforms), with no growing wedge between price and value as their share of GDP rises; or the share of value from nonrival goods does not actually grow.",
+  "synonyms": ["information goods problem", "nonrivalry of ideas (Romer)", "zero marginal cost economy", "excludability breakdown", "speculative microeconomics for tomorrow's economy", "info-goods change everything (postcapitalism)"],
+  "prior_art": [
+    {"citation": "DeLong & Froomkin, 'Speculative Microeconomics for Tomorrow's Economy' (1997/2000)", "url": "https://osaka.law.miami.edu/froomkin/articles/spec.htm", "relation": "anticipates"},
+    {"citation": "Benkler, The Wealth of Networks, ch. 2", "url": "https://cyber.harvard.edu/wealth_of_networks/Chapter_2", "relation": "anticipates"},
+    {"citation": "Info-Goods Change Everything (postcapitalism reading on Romer)", "url": "https://sites.google.com/site/torgsyv/torgsyv/readings/postcapitalism/info-goods-change-everything", "relation": "anticipates"},
+    {"citation": "Information good (Wikipedia)", "url": "https://wikipedia.com/wiki/Information_good", "relation": "anticipates"},
+    {"citation": "The Web economy: goods, users, models and policies (arXiv 1112.0992)", "url": "https://arxiv.org/pdf/1112.0992", "relation": "supports"},
+    {"citation": "Shapiro & Varian, Information Rules (1999), versioning and bundling (via review)", "url": "https://www.emerald.com/insight/content/doi/10.1108/bl.1999.17012aad.003/full/html", "relation": "refutes"}
+  ],
+  "strongest_criticism": "The idea is old and mainstream (Arrow 1962, Romer 1990, DeLong-Froomkin 1997, Benkler, Mason). Its strong form also ignores that markets have adapted with excludability tools such as IP, subscriptions, versioning, bundling and ad-funded platforms. The result is imperfect competition and monopoly rents rather than a collapse of pricing, and a large, highly profitable information sector exists. Most consumption by value (housing, healthcare delivery, energy, food) remains rival, so calling market failure 'the main case' overstates it.",
+  "verdict": "survives-qualified",
+  "novelty": 1,
+  "content": 3,
+  "survival": 2,
+  "confidence": 0.7
+}

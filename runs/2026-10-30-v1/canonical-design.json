@@ -1,0 +1,20 @@
+{
+  "id": "canonical-design",
+  "strong_form": "Across engineered product categories, designs tend over time toward fewer parts and simpler architectures, and products that (a) have many moving parts relative to their function or (b) depend on an input whose cost recently fell sharply are more likely than others to be displaced by a radically simpler redesign within the following years.",
+  "weak_form": "Asking 'which incumbent object violates simplicity, or was designed around a cost that no longer holds?' is a useful prompt for finding invention opportunities.",
+  "kind": "heuristic",
+  "refuted_if": "A study of product categories shows that mature designs typically gain parts and complexity (e.g., cars, jet engines, aircraft, software), and that high part count or a recent input-price drop does not predict later radical simplifying redesign better than chance.",
+  "synonyms": ["TRIZ law of increasing ideality", "TRIZ trimming", "complexification followed by simplification", "Design for Manufacture and Assembly (DFMA) part-count reduction", "dominant design / innovation life cycle", "first-principles redesign"],
+  "prior_art": [
+    {"citation": "Laws of technical systems evolution (TRIZ), Wikipedia", "url": "https://en.wikipedia.org/wiki/Laws_of_technical_systems_evolution", "relation": "anticipates"},
+    {"citation": "TRIZ Trends of Evolution - Increasing Ideality & S-Curves, triz.co.uk", "url": "https://www.triz.co.uk/glossary/increasing-ideality-s-curves", "relation": "anticipates"},
+    {"citation": "Boothroyd Dewhurst, DFMA product simplification", "url": "https://dfma.com/news/simplify.asp", "relation": "supports"},
+    {"citation": "Boothroyd Dewhurst, DFMA overview and ROI (average 54% part-count reduction across case studies)", "url": "https://www.dfma.com/resources/dfma-overview-roi.asp", "relation": "supports"}
+  ],
+  "strongest_criticism": "The first half is TRIZ's ideality law and Altshuller's complexification-then-simplification trend, stated decades ago, and plenty of counterexamples exist: many mature technologies get more complex as they chase the last few percent of performance (turbofans, automobiles, chip fabs). DFMA case studies show part counts can be cut a lot, but they come from consultancies, are selected for success, and don't show that maturity alone causes simplification. The 'input just got cheap' trigger is plausible (it's the logic of factor-price-driven redesign) but I found no systematic test, so as a predictor it is untested rather than confirmed.",
+  "verdict": "contested",
+  "novelty": 1,
+  "content": 2,
+  "survival": 1,
+  "confidence": 0.6
+}
