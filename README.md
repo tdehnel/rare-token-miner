@@ -1,5 +1,7 @@
 # Interestingness
 
+See [docs/OVERVIEW.md](docs/OVERVIEW.md) for the full process with diagrams.
+
 A machine that finds ideas that are true, or problems that are real, but not widely known.
 
 ## Definition
