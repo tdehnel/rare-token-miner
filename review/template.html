@@ -1,0 +1,409 @@
+<title>Critic Review Desk</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a referee's desk. Summary strip, then one card per claim, hand label and critic side by side, ruling bar underneath. */
+:root {
+  --bg: #f3f5f7;
+  --surface: #ffffff;
+  --ink: #17202a;
+  --muted: #5b6876;
+  --line: #d9dfe5;
+  --accent: #2446a8;
+  --hand: #9a5b00;
+  --hand-soft: #fbf1e2;
+  --critic: #0b6e69;
+  --critic-soft: #e2f3f1;
+  --good: #1f7a3a;
+  --warn: #a65d00;
+  --bad: #b3261e;
+  --display: "Newsreader", Georgia, "Times New Roman", serif;
+  --body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #12161b; --surface: #1a2027; --ink: #e6ebf0; --muted: #98a4b1; --line: #2c343d;
+    --accent: #8aa7ff; --hand: #f0b35a; --hand-soft: #2c2318; --critic: #5fd0c7; --critic-soft: #15292a;
+    --good: #6fcf8a; --warn: #f0b35a; --bad: #ff8a80; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #12161b; --surface: #1a2027; --ink: #e6ebf0; --muted: #98a4b1; --line: #2c343d;
+  --accent: #8aa7ff; --hand: #f0b35a; --hand-soft: #2c2318; --critic: #5fd0c7; --critic-soft: #15292a;
+  --good: #6fcf8a; --warn: #f0b35a; --bad: #ff8a80; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font: 15px/1.55 var(--body); }
+.wrap { max-width: 1100px; margin: 0 auto; padding-block: 28px 64px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); display: grid; grid-template-columns: minmax(0, 1fr); gap: 20px; }
+h1 { font: 600 2rem/1.15 var(--display); margin: 0; text-wrap: balance; }
+h2 { font: 600 1.3rem/1.25 var(--display); margin: 0; text-wrap: balance; }
+.lede { color: var(--muted); max-width: 68ch; margin: 6px 0 0; }
+.eyebrow { font: 500 0.72rem/1 var(--mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.mono { font-family: var(--mono); font-variant-numeric: tabular-nums; }
+
+.strip { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
+.stat { background: var(--surface); padding: 14px 16px; display: grid; gap: 4px; }
+.stat b { font: 500 1.5rem/1.1 var(--mono); font-variant-numeric: tabular-nums; }
+.progress { height: 6px; background: var(--line); border-radius: 3px; overflow: hidden; }
+.progress i { display: block; height: 100%; background: var(--accent); width: 0; transition: width .3s; }
+
+.controls { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.seg { display: inline-flex; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; background: var(--surface); }
+.seg button { font: 500 0.85rem var(--body); border: 0; background: none; color: var(--muted); padding: 7px 12px; cursor: pointer; }
+.seg button[aria-pressed="true"] { background: var(--accent); color: var(--surface); }
+.note { font-size: 0.85rem; color: var(--muted); }
+.note.warn { color: var(--warn); }
+
+.legend { display: flex; flex-wrap: wrap; gap: 16px; font-size: 0.85rem; color: var(--muted); }
+.legend span::before { content: ""; display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 6px; vertical-align: -1px; }
+.legend .lh::before { background: var(--hand); }
+.legend .lc::before { background: var(--critic); }
+
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; display: grid; grid-template-columns: minmax(0, 1fr); }
+.card-head { padding: 18px 20px 14px; display: grid; gap: 8px; border-bottom: 1px solid var(--line); }
+.head-row { display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: baseline; justify-content: space-between; }
+.claim { margin: 0; max-width: 75ch; }
+.quote { margin: 0; color: var(--muted); font: italic 500 1rem/1.45 var(--display); max-width: 75ch; }
+.gap-pill { font: 500 0.75rem/1 var(--mono); padding: 5px 8px; border-radius: 999px; border: 1px solid var(--line); color: var(--muted); white-space: nowrap; }
+.gap-pill.big { border-color: var(--bad); color: var(--bad); }
+.gap-pill.mid { border-color: var(--warn); color: var(--warn); }
+.ruled-pill { font: 500 0.75rem/1 var(--mono); padding: 5px 8px; border-radius: 999px; background: var(--accent); color: var(--surface); }
+
+.sides { display: grid; grid-template-columns: 1fr 1fr; }
+.side { padding: 16px 20px; display: grid; gap: 10px; align-content: start; min-width: 0; }
+.side + .side { border-left: 1px solid var(--line); }
+.side.hand { background: linear-gradient(var(--hand-soft), var(--hand-soft)) top / 100% 4px no-repeat; }
+.side.critic { background: linear-gradient(var(--critic-soft), var(--critic-soft)) top / 100% 4px no-repeat; }
+.side-title { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
+.side.hand .side-title .eyebrow { color: var(--hand); }
+.side.critic .side-title .eyebrow { color: var(--critic); }
+.verdict { font: 500 0.8rem/1 var(--mono); padding: 4px 7px; border-radius: 5px; background: var(--bg); border: 1px solid var(--line); }
+
+.axes { display: grid; grid-template-columns: auto 1fr auto; gap: 4px 10px; align-items: center; font-size: 0.85rem; }
+.dots { display: inline-flex; gap: 4px; }
+.dots i { width: 14px; height: 14px; border-radius: 3px; border: 1px solid var(--line); background: var(--bg); }
+.side.hand .dots i.on { background: var(--hand); border-color: var(--hand); }
+.side.critic .dots i.on { background: var(--critic); border-color: var(--critic); }
+.axes .diff { font: 500 0.75rem var(--mono); color: var(--bad); }
+.total { font: 600 1.1rem var(--mono); font-variant-numeric: tabular-nums; }
+
+.field { display: grid; gap: 3px; }
+.field p { margin: 0; overflow-wrap: anywhere; }
+.refs { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.refs li { display: grid; grid-template-columns: auto 1fr; gap: 8px; align-items: baseline; font-size: 0.88rem; }
+.refs a { color: var(--accent); overflow-wrap: anywhere; }
+.rel { font: 500 0.68rem/1 var(--mono); text-transform: uppercase; letter-spacing: 0.05em; padding: 3px 5px; border-radius: 4px; border: 1px solid currentColor; }
+.rel.anticipates { color: var(--muted); }
+.rel.refutes { color: var(--bad); }
+.rel.supports { color: var(--good); }
+.rel.cites { color: var(--hand); }
+details summary { cursor: pointer; color: var(--muted); font-size: 0.85rem; }
+details[open] summary { margin-bottom: 8px; }
+
+.rule { border-top: 1px solid var(--line); padding: 16px 20px 18px; display: grid; gap: 12px; background: var(--bg); border-radius: 0 0 12px 12px; }
+.choices { display: flex; flex-wrap: wrap; gap: 8px; }
+.choice { font: 500 0.88rem var(--body); padding: 8px 12px; border-radius: 8px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); cursor: pointer; }
+.choice[aria-pressed="true"].c-critic { background: var(--critic); border-color: var(--critic); color: var(--surface); }
+.choice[aria-pressed="true"].c-hand { background: var(--hand); border-color: var(--hand); color: var(--surface); }
+.choice[aria-pressed="true"].c-split, .choice[aria-pressed="true"].c-neither { background: var(--ink); border-color: var(--ink); color: var(--surface); }
+.final { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; font-size: 0.88rem; }
+.final label { display: inline-flex; gap: 6px; align-items: center; }
+.final label { max-width: 100%; min-width: 0; }
+.final select { max-width: 100%; min-width: 0; font: 500 0.9rem var(--mono); padding: 4px 6px; border-radius: 6px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); }
+.final .total { margin-left: auto; }
+textarea { width: 100%; min-height: 60px; font: 0.9rem/1.45 var(--body); padding: 8px 10px; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); color: var(--ink); resize: vertical; }
+.save-row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+.save { font: 600 0.9rem var(--body); padding: 8px 16px; border-radius: 8px; border: 0; background: var(--accent); color: var(--surface); cursor: pointer; }
+.save:disabled { opacity: 0.45; cursor: not-allowed; }
+button:focus-visible, select:focus-visible, textarea:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+@media (max-width: 720px) {
+  .sides { grid-template-columns: 1fr; }
+  .side + .side { border-left: 0; border-top: 1px solid var(--line); }
+  h1 { font-size: 1.6rem; }
+  .final label { width: 100%; justify-content: space-between; }
+  .final select { flex: 1; }
+}
+@media (prefers-reduced-motion: reduce) { .progress i { transition: none; } }
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="eyebrow" id="run-label">Rare Token Miner</div>
+    <h1>Critic Review Desk</h1>
+    <p class="lede">Each card shows one claim from pilot 1, with the hand label on the left and the blind critic's verdict on the right. Cards with the biggest score gap come first. Pick who is right, adjust the final scores if needed, and save. Your rulings become the adjudicated labels.</p>
+  </header>
+
+  <section class="strip" aria-label="Summary">
+    <div class="stat"><span class="eyebrow">Ruled</span><b id="s-ruled">0 / 0</b><div class="progress"><i id="s-bar"></i></div></div>
+    <div class="stat"><span class="eyebrow">Same verdict</span><b id="s-verdict">–</b></div>
+    <div class="stat"><span class="eyebrow">Score rank corr.</span><b id="s-rho">–</b></div>
+    <div class="stat"><span class="eyebrow">Critic sided with</span><b id="s-sided">–</b></div>
+  </section>
+
+  <div class="controls">
+    <div class="seg" role="group" aria-label="Filter">
+      <button type="button" data-filter="all" aria-pressed="true">All</button>
+      <button type="button" data-filter="gap">Score gap ≥ 4</button>
+      <button type="button" data-filter="open">Not ruled</button>
+      <button type="button" data-filter="done">Ruled</button>
+    </div>
+    <span class="note" id="db-note">Connecting to saved rulings…</span>
+  </div>
+
+  <div class="legend"><span class="lh">Hand label (frozen v1 baseline)</span><span class="lc">Blind critic (run v1)</span><span>Score = novelty × content × survival, 0 to 27</span></div>
+
+  <main id="list" style="display:grid;grid-template-columns:minmax(0,1fr);gap:18px"></main>
+</div>
+
+<script>
+const DATA = __DATA__;
+const AXES = ['novelty', 'content', 'survival'];
+const SCALE = {
+  novelty: ['everyone knows it', 'known under another name', 'known mainly to specialists', 'almost nobody says it'],
+  content: ['says nothing testable', 'an anecdote', 'explains one field', 'explains across fields'],
+  survival: ['refuted or untestable', 'contested or untested', 'survives with caveats', 'survives best criticism'],
+};
+const CHOICES = [
+  ['critic', 'Critic is right', 'c-critic'],
+  ['hand', 'Hand label is right', 'c-hand'],
+  ['split', 'Each partly right', 'c-split'],
+  ['neither', 'Neither', 'c-neither'],
+];
+
+let rulings = {};      // id -> saved ruling
+let drafts = {};       // id -> unsaved edits
+let filter = 'all';
+let db = null;
+let canSave = false;
+
+const el = (tag, attrs = {}, ...kids) => {
+  const n = document.createElement(tag);
+  for (const [k, v] of Object.entries(attrs)) {
+    if (k === 'class') n.className = v;
+    else if (k === 'text') n.textContent = v;
+    else if (k.startsWith('on')) n.addEventListener(k.slice(2), v);
+    else if (v !== null && v !== undefined && v !== false) n.setAttribute(k, v === true ? '' : v);
+  }
+  for (const kid of kids.flat()) if (kid !== null && kid !== undefined) n.append(kid.nodeType ? kid : document.createTextNode(kid));
+  return n;
+};
+const score = (s) => s.novelty * s.content * s.survival;
+const gap = (it) => Math.abs(it.hand.score - it.critic.score);
+
+function spearman(a, b) {
+  const rank = (xs) => {
+    const o = xs.map((x, i) => [x, i]).sort((p, q) => p[0] - q[0]);
+    const r = new Array(xs.length);
+    for (let i = 0; i < o.length;) {
+      let j = i;
+      while (j + 1 < o.length && o[j + 1][0] === o[i][0]) j++;
+      for (let k = i; k <= j; k++) r[o[k][1]] = (i + j) / 2 + 1;
+      i = j + 1;
+    }
+    return r;
+  };
+  const ra = rank(a), rb = rank(b), n = a.length;
+  const ma = ra.reduce((s, x) => s + x, 0) / n, mb = rb.reduce((s, x) => s + x, 0) / n;
+  let num = 0, da = 0, dbb = 0;
+  for (let i = 0; i < n; i++) { num += (ra[i] - ma) * (rb[i] - mb); da += (ra[i] - ma) ** 2; dbb += (rb[i] - mb) ** 2; }
+  return num / Math.sqrt(da * dbb);
+}
+
+function dots(n) { return el('span', { class: 'dots', 'aria-label': n + ' of 3' }, [0, 1, 2].map((i) => el('i', { class: i < n ? 'on' : '' }))); }
+
+function refs(list, fallbackRel) {
+  if (!list || !list.length) return el('p', { class: 'note', text: 'None listed.' });
+  return el('ul', { class: 'refs' }, list.map((r) => {
+    const rel = typeof r === 'string' ? fallbackRel : r.relation;
+    const body = typeof r === 'string'
+      ? el('span', { text: r })
+      : (r.url ? el('a', { href: r.url, target: '_blank', rel: 'noopener', text: r.citation }) : el('span', { text: r.citation }));
+    return el('li', {}, el('span', { class: 'rel ' + rel, text: rel }), body);
+  }));
+}
+
+function side(it, who) {
+  const s = it[who], other = it[who === 'hand' ? 'critic' : 'hand'];
+  const axes = el('div', { class: 'axes' });
+  for (const a of AXES) {
+    const d = s[a] - other[a];
+    axes.append(el('span', { text: a }), dots(s[a]), el('span', { class: 'diff', text: who === 'critic' && d ? (d > 0 ? '+' : '') + d : '' }));
+  }
+  const parts = [
+    el('div', { class: 'side-title' },
+      el('span', { class: 'eyebrow', text: who === 'hand' ? 'Hand label' : 'Critic · confidence ' + s.confidence }),
+      el('span', { class: 'verdict', text: s.verdict })),
+    el('div', { style: 'display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap' }, axes, el('span', { class: 'total', text: s.score + ' / 27' })),
+  ];
+  if (who === 'critic') {
+    parts.push(field('Strongest testable form', s.strong_form));
+    parts.push(field('Strongest criticism', s.criticism));
+    if (s.weak_form) parts.push(field('Weaker version', s.weak_form));
+  } else {
+    parts.push(field('Notes', s.notes));
+  }
+  parts.push(field('Refuted if', s.refuted_if || 'No refuting observation named.'));
+  const det = el('details', {},
+    el('summary', { text: (who === 'hand' ? 'Prior art and synonyms' : 'Sources (' + s.prior_art.length + ') and synonyms') }),
+    el('div', { style: 'display:grid;gap:10px' },
+      refs(s.prior_art, 'cites'),
+      field('Synonyms', s.synonyms.length ? s.synonyms.join('; ') : 'None listed.')));
+  parts.push(det);
+  return el('section', { class: 'side ' + who, 'aria-label': who === 'hand' ? 'Hand label' : 'Critic verdict' }, parts);
+}
+
+function field(label, text) { return el('div', { class: 'field' }, el('span', { class: 'eyebrow', text: label }), el('p', { text })); }
+
+function current(it) {
+  const saved = rulings[it.id];
+  const d = drafts[it.id] || {};
+  const base = saved || {};
+  const choice = d.choice ?? base.choice ?? null;
+  const src = choice === 'hand' ? it.hand : it.critic;
+  const pick = (a) => d[a] ?? base[a] ?? (choice ? src[a] : null);
+  return { choice, novelty: pick('novelty'), content: pick('content'), survival: pick('survival'), note: d.note ?? base.note ?? '' };
+}
+
+function ruleBar(it) {
+  const cur = current(it);
+  const saved = rulings[it.id];
+  const dirty = !!drafts[it.id];
+  const bar = el('div', { class: 'rule' });
+  bar.append(el('div', { class: 'choices', role: 'group', 'aria-label': 'Ruling' }, CHOICES.map(([v, label, cls]) =>
+    el('button', {
+      type: 'button', class: 'choice ' + cls, 'aria-pressed': String(cur.choice === v), id: 'ch-' + it.id + '-' + v,
+      onclick: () => {
+        const src = v === 'hand' ? it.hand : it.critic;
+        drafts[it.id] = { ...(drafts[it.id] || {}), choice: v, novelty: src.novelty, content: src.content, survival: src.survival };
+        rerender(it.id);
+      },
+    }, label))));
+
+  if (cur.choice) {
+    const fin = el('div', { class: 'final' }, el('span', { class: 'eyebrow', text: 'Final scores' }));
+    for (const a of AXES) {
+      const sel = el('select', { id: 'sel-' + it.id + '-' + a, 'aria-label': a, onchange: (e) => {
+        drafts[it.id] = { ...current(it), ...(drafts[it.id] || {}), [a]: Number(e.target.value) };
+        rerender(it.id);
+      } }, [0, 1, 2, 3].map((n) => el('option', { value: n, selected: cur[a] === n, text: n + ' · ' + SCALE[a][n] })));
+      fin.append(el('label', {}, a, sel));
+    }
+    fin.append(el('span', { class: 'total', text: score(cur) + ' / 27' }));
+    bar.append(fin);
+  }
+
+  const ta = el('textarea', { id: 'note-' + it.id, placeholder: 'Why? Name the evidence or the error. (Optional, but it is what improves the critic.)', oninput: (e) => {
+    drafts[it.id] = { ...current(it), ...(drafts[it.id] || {}), note: e.target.value };
+    saveBtn.disabled = !canSave || !current(it).choice;
+    status.textContent = 'Unsaved changes';
+  } });
+  ta.value = cur.note;
+  bar.append(ta);
+
+  const status = el('span', { class: 'note', text: dirty ? 'Unsaved changes' : (saved ? 'Saved' : 'Not ruled yet') });
+  const saveBtn = el('button', { type: 'button', class: 'save', id: 'save-' + it.id, disabled: !canSave || !cur.choice || (!dirty && !!saved), onclick: async () => {
+    const r = current(it);
+    saveBtn.disabled = true;
+    status.textContent = 'Saving…';
+    try {
+      await db.collection('rulings').doc(it.id).set({
+        choice: r.choice, novelty: r.novelty, content: r.content, survival: r.survival, note: r.note,
+        hand_score: it.hand.score, critic_score: it.critic.score, run: DATA.run, saved_at: new Date().toISOString(),
+      });
+      rulings[it.id] = { ...r };
+      delete drafts[it.id];
+      rerender(it.id);
+      updateStats();
+    } catch (e) {
+      saveBtn.disabled = false;
+      status.textContent = e && e.code === 'invalid_argument'
+        ? 'You can view this page but not save rulings. Ask the owner for edit access.'
+        : 'Not saved. Check your connection and press Save again.';
+    }
+  } }, 'Save ruling');
+  bar.append(el('div', { class: 'save-row' }, saveBtn, status));
+  return bar;
+}
+
+function card(it) {
+  const g = gap(it);
+  const ruled = !!rulings[it.id];
+  return el('article', { class: 'card', id: 'card-' + it.id },
+    el('div', { class: 'card-head' },
+      el('div', { class: 'head-row' },
+        el('h2', { text: it.term ? it.term.replace(/^./, (c) => c.toUpperCase()) : it.id.replace(/-/g, ' ') }),
+        el('div', { style: 'display:flex;gap:6px;flex-wrap:wrap' },
+          ruled ? el('span', { class: 'ruled-pill', text: 'Ruled: ' + rulings[it.id].choice }) : null,
+          el('span', { class: 'gap-pill ' + (g >= 6 ? 'big' : g >= 3 ? 'mid' : ''), text: 'gap ' + g }))),
+      el('p', { class: 'claim', text: it.claim }),
+      el('p', { class: 'quote', text: '“' + it.quote + '”' })),
+    el('div', { class: 'sides' }, side(it, 'hand'), side(it, 'critic')),
+    ruleBar(it));
+}
+
+const ordered = [...DATA.items].sort((a, b) => gap(b) - gap(a) || b.hand.score - a.hand.score);
+
+function visible(it) {
+  if (filter === 'gap') return gap(it) >= 4;
+  if (filter === 'open') return !rulings[it.id];
+  if (filter === 'done') return !!rulings[it.id];
+  return true;
+}
+
+function render() {
+  const list = document.getElementById('list');
+  const shown = ordered.filter(visible);
+  list.replaceChildren(...(shown.length ? shown.map(card) : [el('p', { class: 'note', text: filter === 'done' ? 'No rulings saved yet. Pick a card under All and save a ruling.' : 'Nothing matches this filter.' })]));
+  updateStats();
+}
+
+function rerender(id) {
+  const old = document.getElementById('card-' + id);
+  const it = DATA.items.find((x) => x.id === id);
+  if (old && it) {
+    const focusId = document.activeElement && document.activeElement.id;
+    old.replaceWith(card(it));
+    if (focusId) { const f = document.getElementById(focusId); if (f) f.focus(); }
+  }
+}
+
+function updateStats() {
+  const n = DATA.items.length;
+  const ruled = DATA.items.filter((it) => rulings[it.id]).length;
+  document.getElementById('s-ruled').textContent = ruled + ' / ' + n;
+  document.getElementById('s-bar').style.width = (100 * ruled / n) + '%';
+  const same = DATA.items.filter((it) => it.hand.verdict === it.critic.verdict).length;
+  document.getElementById('s-verdict').textContent = same + ' / ' + n;
+  document.getElementById('s-rho').textContent = spearman(DATA.items.map((i) => i.hand.score), DATA.items.map((i) => i.critic.score)).toFixed(2);
+  const counts = { critic: 0, hand: 0, split: 0, neither: 0 };
+  for (const r of Object.values(rulings)) if (counts[r.choice] !== undefined) counts[r.choice]++;
+  document.getElementById('s-sided').textContent = ruled ? `critic ${counts.critic} · hand ${counts.hand} · split ${counts.split + counts.neither}` : '–';
+}
+
+document.getElementById('run-label').textContent = 'Rare Token Miner · run ' + DATA.run;
+document.querySelectorAll('[data-filter]').forEach((b) => b.addEventListener('click', () => {
+  filter = b.dataset.filter;
+  document.querySelectorAll('[data-filter]').forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
+  render();
+}));
+render();
+
+(async () => {
+  const note = document.getElementById('db-note');
+  try { db = await (window.claude && window.claude.use ? window.claude.use('db') : null); } catch (e) { db = null; }
+  if (!db) { note.textContent = 'Rulings can’t be saved in this view. Open the page on claude.ai while signed in.'; note.className = 'note warn'; return; }
+  canSave = true;
+  const timer = setTimeout(() => { note.textContent = 'Saved rulings can’t be reached yet. New rulings will still save.'; note.className = 'note warn'; }, 10000);
+  db.collection('rulings').onSnapshot((snap) => {
+    const next = {};
+    for (const d of snap.docs) if (d.exists) next[d.id] = d.data();
+    rulings = next;
+    if (!snap.metadata.fromCache) { clearTimeout(timer); note.textContent = 'Rulings save automatically to this page.'; note.className = 'note'; }
+    render();
+  }, () => { clearTimeout(timer); note.textContent = 'Lost the connection to saved rulings. Reload the page to reconnect.'; note.className = 'note warn'; });
+})();
+</script>
